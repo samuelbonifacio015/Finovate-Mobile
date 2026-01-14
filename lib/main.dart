@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:finovate_mobile/app/screens/home.dart';
-import 'package:finovate_mobile/app/widget/Button.dart';
 
 void main() {
   runApp(const MyApp());
