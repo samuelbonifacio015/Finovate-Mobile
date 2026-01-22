@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:finovate_mobile/app/widget/Button.dart';
+import 'package:finovate_mobile/ui/notifications/Button.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -35,7 +35,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
                 child: Text(
                   'Administra tus cuentas, realiza  transferencias y mantén el control'
                       'de tus finanzas en un solo lugar.',
@@ -43,12 +43,16 @@ class Home extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
-                    color: Colors.grey[300],
+                    color: Colors.black,
                   ),
                 ),
               ),
               const SizedBox(height: 32),
-              Button(),
+              Button(
+                onPressed: () {
+                  // Acción al presionar el botón
+                },
+              ),
             ],
           ),
         ),
