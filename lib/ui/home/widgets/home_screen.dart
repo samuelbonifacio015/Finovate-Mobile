@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:finovate_mobile/ui/notifications/Button.dart';
+import 'package:finovate_mobile/ui/notifications/button.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
