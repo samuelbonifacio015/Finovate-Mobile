@@ -37,10 +37,13 @@ class Home extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 32.0,
+                  vertical: 16.0,
+                ),
                 child: Text(
                   'Administra tus cuentas, realiza  transferencias y mantén el control'
-                      'de tus finanzas en un solo lugar.',
+                  'de tus finanzas en un solo lugar.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
