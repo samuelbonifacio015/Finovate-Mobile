@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:finovate_mobile/ui/notifications/button.dart';
+import 'package:finovate_mobile/routing/routes.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -50,7 +52,7 @@ class Home extends StatelessWidget {
               const SizedBox(height: 32),
               Button(
                 onPressed: () {
-                  // Acción al presionar el botón
+                  context.push(Routes.transaction);
                 },
               ),
             ],

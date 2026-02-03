@@ -4,4 +4,5 @@ abstract final class Routes {
   static const String settings = '/settings';
   static const String about = '/about';
   static const String cropsArchive = '/crops-archive';
+  static const String transaction = '/transaction';
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:finovate_mobile/ui/home/widgets/home_screen.dart';
+import 'package:finovate_mobile/routing/router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,10 +10,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: const Home(),
-      )
+    return MaterialApp.router(
+      title: 'Finovate Mobile',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        useMaterial3: true,
+      ),
+      routerConfig: router(),
     );
   }
 }
