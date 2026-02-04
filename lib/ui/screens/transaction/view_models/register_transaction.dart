@@ -17,11 +17,20 @@ class TransactionScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Gestión de Transacciones',
+              Text(
+              'Nueva Transacción',
               style: TextStyle(
-                fontSize: 35,
+                fontSize: 37,
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: Colors.blue,
+              ),
+            ),
+            Text(
+              'MONTO',
+              style: TextStyle(
+                fontSize: 50,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey[400],
               ))
             ]
           )

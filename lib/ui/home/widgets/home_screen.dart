@@ -42,8 +42,7 @@ class Home extends StatelessWidget {
                   vertical: 16.0,
                 ),
                 child: Text(
-                  'Administra tus cuentas, realiza  transferencias y mantén el control'
-                  'de tus finanzas en un solo lugar.',
+                  'Administra tus cuentas, realiza transferencias y mantén el control de tus finanzas en un solo lugar.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
