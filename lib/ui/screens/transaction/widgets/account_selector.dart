@@ -1,2 +1,66 @@
+import 'package:flutter/material.dart';
 
-//Dropdown Principal
+/// Representa una cuenta bancaria o de efectivo
+class Account {
+  final String id;
+  final String name;
+  final String currencySymbol;
+
+  Account({
+    required this.id,
+    required this.name,
+    this.currencySymbol = '\$',
+  });
+}
+
+/// Selector de cuenta (Dropdown) para transacciones
+class AccountSelector extends StatelessWidget {
+  final List<Account> accounts;
+  final String? selectedAccountId;
+  final ValueChanged<Account> onAccountSelected;
+
+  const AccountSelector({
+    super.key,
+    required this.accounts,
+    this.selectedAccountId,
+    required this.onAccountSelected,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    // Encuentra la cuenta seleccionada (si existe)
+    final selectedAccount = accounts.firstWhere(
+      (account) => account.id == selectedAccountId,
+      orElse: () => accounts.isNotEmpty ? accounts.first : Account(id: '', name: 'Sin cuentas'),
+    );
+
+    return DropdownButtonFormField<Account>(
+      value: selectedAccount.id.isEmpty ? null : selectedAccount,
+      items: accounts.map((account) {
+        return DropdownMenuItem<Account>(
+          value: account,
+          child: Row(
+            children: [
+              const Icon(Icons.account_balance, size: 18, color: Colors.grey),
+              const SizedBox(width: 8),
+              Text(account.name),
+            ],
+          ),
+        );
+      }).toList(),
+      onChanged: (Account? account) {
+        if (account != null) {
+          onAccountSelected(account);
+        }
+      },
+      decoration: InputDecoration(
+        labelText: 'Cuenta',
+        prefixIcon: const Icon(Icons.account_balance, color: Colors.grey),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+        contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+      ),
+      dropdownColor: Colors.white,
+      icon: const Icon(Icons.arrow_drop_down),
+    );
+  }
+}
