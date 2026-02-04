@@ -1,5 +1,3 @@
-import 'package:finovate_mobile/ui/screens/transaction/models/account.dart';
-
 /// Tipo de transacción: ingreso o gasto
 enum TransactionType { income, expense }
 
@@ -22,13 +20,13 @@ class Transaction {
   });
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'amount': amount,
-        'type': type.name,
-        'concept': concept,
-        'date': date.toIso8601String(),
-        'accountId': accountId,
-      };
+    'id': id,
+    'amount': amount,
+    'type': type.name,
+    'concept': concept,
+    'date': date.toIso8601String(),
+    'accountId': accountId,
+  };
 
   factory Transaction.fromJson(Map<String, dynamic> json) {
     return Transaction(

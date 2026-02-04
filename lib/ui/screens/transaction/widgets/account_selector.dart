@@ -1,17 +1,5 @@
 import 'package:flutter/material.dart';
-
-/// Representa una cuenta bancaria o de efectivo
-class Account {
-  final String id;
-  final String name;
-  final String currencySymbol;
-
-  Account({
-    required this.id,
-    required this.name,
-    this.currencySymbol = '\$',
-  });
-}
+import 'package:finovate_mobile/ui/screens/transaction/models/account.dart';
 
 /// Selector de cuenta (Dropdown) para transacciones
 class AccountSelector extends StatelessWidget {
@@ -31,7 +19,9 @@ class AccountSelector extends StatelessWidget {
     // Encuentra la cuenta seleccionada (si existe)
     final selectedAccount = accounts.firstWhere(
       (account) => account.id == selectedAccountId,
-      orElse: () => accounts.isNotEmpty ? accounts.first : Account(id: '', name: 'Sin cuentas'),
+      orElse: () => accounts.isNotEmpty
+          ? accounts.first
+          : Account(id: '', name: 'Sin cuentas'),
     );
 
     return DropdownButtonFormField<Account>(
@@ -57,7 +47,10 @@ class AccountSelector extends StatelessWidget {
         labelText: 'Cuenta',
         prefixIcon: const Icon(Icons.account_balance, color: Colors.grey),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-        contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 16,
+          horizontal: 12,
+        ),
       ),
       dropdownColor: Colors.white,
       icon: const Icon(Icons.arrow_drop_down),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:finovate_mobile/ui/screens/transaction/models/account.dart';
 import 'package:finovate_mobile/ui/screens/transaction/models/transaction.dart';
 import 'package:finovate_mobile/ui/screens/transaction/widgets/account_selector.dart';
 import 'package:finovate_mobile/ui/screens/transaction/widgets/amount_display.dart';
@@ -39,9 +40,9 @@ class _TransactionFormState extends State<TransactionForm> {
   }
 
   bool get _isFormValid {
-    return _amount > 0 && 
-           _concept.trim().isNotEmpty && 
-           _selectedAccountId != null;
+    return _amount > 0 &&
+        _concept.trim().isNotEmpty &&
+        _selectedAccountId != null;
   }
 
   @override
@@ -81,7 +82,8 @@ class _TransactionFormState extends State<TransactionForm> {
               child: AccountSelector(
                 accounts: widget.accounts,
                 selectedAccountId: _selectedAccountId,
-                onAccountSelected: (account) => setState(() => _selectedAccountId = account.id),
+                onAccountSelected: (account) =>
+                    setState(() => _selectedAccountId = account.id),
               ),
             ),
           ],
@@ -92,7 +94,8 @@ class _TransactionFormState extends State<TransactionForm> {
         SaveTransactionButton(
           isEnabled: _isFormValid,
           onPressed: () {
-            // Aquí podrías crear el objeto Transaction
+            // Aquí podrías crear el objeto Transaction y guardarlo
+            // ignore: unused_local_variable
             final newTransaction = Transaction(
               id: DateTime.now().millisecondsSinceEpoch.toString(),
               amount: _amount,

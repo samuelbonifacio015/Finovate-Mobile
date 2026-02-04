@@ -1,6 +1,7 @@
 import 'package:finovate_mobile/ui/core/layouts/base_layout.dart';
 import 'package:finovate_mobile/ui/home/widgets/home_screen.dart';
-import 'package:finovate_mobile/ui/screens/transaction/view_models/register_transaction.dart';
+import 'package:finovate_mobile/ui/screens/transaction/view_models/register_transaction.dart'
+    as transaction_vm;
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -65,7 +66,7 @@ GoRouter router() => GoRouter(
         return buildPageWithoutAnimation<void>(
           context: context,
           state: state,
-          child: const TransactionScreen(),
+          child: const transaction_vm.RegisterTransactionScreen(),
         );
       },
     ),
