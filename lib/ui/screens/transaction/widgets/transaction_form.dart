@@ -1,3 +1,4 @@
+import 'package:finovate_mobile/ui/screens/transaction/widgets/category_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:finovate_mobile/ui/screens/transaction/models/account.dart';
 import 'package:finovate_mobile/ui/screens/transaction/models/transaction.dart';
@@ -29,6 +30,7 @@ class _TransactionFormState extends State<TransactionForm> {
   String _concept = '';
   DateTime _date = DateTime.now();
   String? _selectedAccountId;
+  String? _selectedCategory;
 
   @override
   void initState() {
@@ -42,7 +44,8 @@ class _TransactionFormState extends State<TransactionForm> {
   bool get _isFormValid {
     return _amount > 0 &&
         _concept.trim().isNotEmpty &&
-        _selectedAccountId != null;
+        _selectedAccountId != null &&
+        _selectedCategory != null;
   }
 
   @override
@@ -51,7 +54,11 @@ class _TransactionFormState extends State<TransactionForm> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         // Monto grande
-        AmountDisplay(amount: _amount, currencySymbol: 'S/'),
+        AmountDisplay(
+          amount: _amount,
+          currencySymbol: 'S/',
+          onAmountChanged: (amount) => setState(() => _amount = amount),
+        ),
         const SizedBox(height: 20),
 
         // Tipo: Ingreso / Gasto
@@ -65,6 +72,36 @@ class _TransactionFormState extends State<TransactionForm> {
         ConceptField(
           initialConcept: _concept,
           onConceptChanged: (value) => setState(() => _concept = value),
+        ),
+        const SizedBox(height: 20),
+
+        // Categoría de transacción
+        CategoryGrid(
+          categories: [
+            Category(
+              name: 'Comida',
+              icon: Icons.fastfood,
+              isSelected: _selectedCategory == 'Comida',
+            ),
+            Category(
+              name: 'Transporte',
+              icon: Icons.directions_car,
+              isSelected: _selectedCategory == 'Transporte',
+            ),
+            Category(
+              name: 'Salud',
+              icon: Icons.health_and_safety,
+              isSelected: _selectedCategory == 'Salud',
+            ),
+            Category(
+              name: 'Entretenimiento',
+              icon: Icons.movie,
+              isSelected: _selectedCategory == 'Entretenimiento',
+            ),
+          ],
+          onSelected: (category) {
+            setState(() => _selectedCategory = category.name);
+          },
         ),
         const SizedBox(height: 20),
 
