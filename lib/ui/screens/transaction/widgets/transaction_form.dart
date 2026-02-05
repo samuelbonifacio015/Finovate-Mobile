@@ -1,7 +1,7 @@
 import 'package:finovate_mobile/ui/screens/transaction/widgets/category_grid.dart';
 import 'package:flutter/material.dart';
-import 'package:finovate_mobile/ui/screens/transaction/models/account.dart';
-import 'package:finovate_mobile/ui/screens/transaction/models/transaction.dart';
+import 'package:finovate_mobile/ui/core/models/account.dart';
+import 'package:finovate_mobile/ui/core/models/transaction.dart';
 import 'package:finovate_mobile/ui/screens/transaction/widgets/account_selector.dart';
 import 'package:finovate_mobile/ui/screens/transaction/widgets/amount_display.dart';
 import 'package:finovate_mobile/ui/screens/transaction/widgets/concept_field.dart';

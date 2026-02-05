@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:finovate_mobile/ui/screens/transaction/models/transaction.dart';
+import 'package:finovate_mobile/ui/core/models/transaction.dart';
 
 /// Toggle para seleccionar el tipo de transacción (Ingreso/Gasto)
 class TransactionTypeToggle extends StatelessWidget {

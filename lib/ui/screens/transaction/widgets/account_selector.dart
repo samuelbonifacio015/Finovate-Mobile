@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:finovate_mobile/ui/screens/transaction/models/account.dart';
+import 'package:finovate_mobile/ui/core/models/account.dart';
 
 /// Selector de cuenta (Dropdown) para transacciones
 class AccountSelector extends StatelessWidget {

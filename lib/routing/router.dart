@@ -39,24 +39,22 @@ GoRouter router() => GoRouter(
       },
     ),
     GoRoute(
+      path: Routes.notifications,
+      pageBuilder: (context, state) {
+        return buildPageWithoutAnimation<void>(
+          context: context,
+          state: state,
+          child: const BaseLayout(body: Center(child: Text('Notifications Screen'))),
+        );
+      },
+    ),
+    GoRoute(
       path: Routes.profile,
       pageBuilder: (context, state) {
         return buildPageWithoutAnimation<void>(
           context: context,
           state: state,
           child: const BaseLayout(body: Center(child: Text('Profile Screen'))),
-        );
-      },
-    ),
-    GoRoute(
-      path: Routes.cropsArchive,
-      pageBuilder: (context, state) {
-        return buildPageWithoutAnimation<void>(
-          context: context,
-          state: state,
-          child: const BaseLayout(
-            body: Center(child: Text('Crops Archive Screen')),
-          ),
         );
       },
     ),

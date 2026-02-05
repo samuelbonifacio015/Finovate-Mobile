@@ -3,6 +3,6 @@ abstract final class Routes {
   static const String profile = '/profile';
   static const String settings = '/settings';
   static const String about = '/about';
-  static const String cropsArchive = '/crops-archive';
   static const String transaction = '/transaction';
+  static const String notifications = '/notifications';
 }

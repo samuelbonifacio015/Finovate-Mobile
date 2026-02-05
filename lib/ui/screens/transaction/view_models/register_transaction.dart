@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:finovate_mobile/ui/screens/transaction/models/account.dart';
+import 'package:finovate_mobile/ui/core/models/account.dart';
 import 'package:finovate_mobile/ui/screens/transaction/widgets/transaction_form.dart';
 
 class RegisterTransactionScreen extends StatelessWidget {

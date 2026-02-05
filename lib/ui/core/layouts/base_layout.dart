@@ -26,11 +26,11 @@ class _BaseLayoutState extends State<BaseLayout> {
 
     final currentRoute = GoRouterState.of(context).location;
 
-    if (currentRoute == Routes.profile) {
+    if (currentRoute == Routes.notifications) {
       _currentIndex = 0;
     } else if (currentRoute == Routes.home) {
       _currentIndex = 1;
-    } else if (currentRoute == Routes.cropsArchive) {
+    } else if (currentRoute == Routes.profile) {
       _currentIndex = 2;
     }
 
@@ -70,7 +70,7 @@ class _BaseLayoutState extends State<BaseLayout> {
         children: [
           _buildNavItem(0, Icons.notifications, hasNotification: true),
           _buildNavItem(1, Icons.home),
-          _buildNavItem(2, Icons.archive),
+          _buildNavItem(2, Icons.person),
         ],
       ),
     );
@@ -89,11 +89,11 @@ class _BaseLayoutState extends State<BaseLayout> {
         });
 
         if (index == 0) {
-          context.go(Routes.profile);
+          context.go(Routes.notifications);
         } else if (index == 1) {
           context.go(Routes.home);
         } else if (index == 2) {
-          context.go(Routes.cropsArchive);
+          context.go(Routes.profile);
         }
       },
       child: Stack(
