@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// TextField con iconos y placeholder
+// TextField con iconos y placeholder (¿En qué gastaste?)
 class ConceptField extends StatelessWidget {
   final String initialConcept;
   final ValueChanged<String> onConceptChanged;

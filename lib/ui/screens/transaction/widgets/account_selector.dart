@@ -45,7 +45,6 @@ class AccountSelector extends StatelessWidget {
       },
       decoration: InputDecoration(
         labelText: 'Cuenta',
-        prefixIcon: const Icon(Icons.account_balance, color: Colors.grey),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
         contentPadding: const EdgeInsets.symmetric(
           vertical: 16,
