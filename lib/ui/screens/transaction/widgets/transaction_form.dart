@@ -9,7 +9,7 @@ import 'package:finovate_mobile/ui/screens/transaction/widgets/date_picker_widge
 import 'package:finovate_mobile/ui/screens/transaction/widgets/save_transaction_button.dart';
 import 'package:finovate_mobile/ui/screens/transaction/widgets/transaction_type_toggle.dart';
 
-//Widget que ensambla todo (layout)
+//Layout de TransactionForm
 class TransactionForm extends StatefulWidget {
   final List<Account> accounts;
   final VoidCallback onSave;

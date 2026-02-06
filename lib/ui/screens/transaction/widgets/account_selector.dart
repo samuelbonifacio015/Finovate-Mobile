@@ -25,7 +25,7 @@ class AccountSelector extends StatelessWidget {
     );
 
     return DropdownButtonFormField<Account>(
-      value: selectedAccount.id.isEmpty ? null : selectedAccount,
+      initialValue: selectedAccount.id.isEmpty ? null : selectedAccount,
       items: accounts.map((account) {
         return DropdownMenuItem<Account>(
           value: account,
